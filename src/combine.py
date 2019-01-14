@@ -79,7 +79,7 @@ class Combined_Model(torch.nn.Module):
         return s_out
 ### DEVICE ###
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-
+"""
 root_dir = os.path.join(args.root_dir)
 
 train_file = pd.read_csv(os.path.join(args.root_dir,"train.csv"))
@@ -98,7 +98,7 @@ for i in train_file.index:
         
 
 img_dirs = os.path.join(args.img_dirs)
-
+"""
 #Use /255 as normalize
 #normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
 transformList = []
@@ -158,6 +158,23 @@ def main(args):
 
     epoch = args.epoch_number
     model_name = args.model_name
+    root_dir = os.path.join(args.root_dir)
+    train_file = pd.read_csv(os.path.join(args.root_dir,"train.csv"))
+    label_data = []
+    unlabel_data = []
+    for i in train_file.index:
+        if type(train_file.loc[i]["Labels"]) != str:
+            if math.isnan(train_file.loc[i]["Labels"]):
+                pass
+                '''
+                unlabel_data.append( [ train_file.loc[i]["Image Index"] ])
+                '''
+        else:
+            p = [train_file.loc[i]["Image Index"], train_file.loc[i]["Labels"]]
+            label_data.append(p)
+
+
+    img_dirs = os.path.join(args.img_dirs)
     """
     train_data = label_data[len(label_data)//10:]
     val_data = label_data[:len(label_data)//10]
