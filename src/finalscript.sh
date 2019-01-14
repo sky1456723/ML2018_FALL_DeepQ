@@ -5,6 +5,6 @@ do
 done
 for j in {1..12}
 do
-	python3 ./test_combine_model.py ./model_$j ./model_$j.csv $1 $2
+	python3 ./test_combine_model.py ./model_$j ./model_$j.csv $1 $3
 done
 python3 ./ensemble.py
