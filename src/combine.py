@@ -108,7 +108,7 @@ transformList.append(transforms.RandomHorizontalFlip())
 transformList.append(transforms.ToTensor())
 #transformList.append(normalize)      
 transformSequence=transforms.Compose(transformList)
-def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4):
+def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4, img_dirs = None):
     part_data = []
     part_label = []
     print(len(data_list))
@@ -197,7 +197,8 @@ def main(args):
             label_dataloader = get_dataloader(train_data[part*len(train_data)//4:(part+1)*len(train_data)//4],
                                              transform = transformSequence,
                                              normalize = None,
-                                             batch_size = args.batch_size)
+                                             batch_size = args.batch_size,
+                                             img_dirs = args.imgs_dir)
             for b_num, (data, label) in enumerate(label_dataloader):
                 data = data.to(device)
                 label = label.to(device)
@@ -254,6 +255,10 @@ if __name__ == '__main__':
     parser.add_argument('--supervised_model_name', '-s', type=str)
     parser.add_argument('--unsupervised_model_name', '-u', type=str)
     parser.add_argument('--root_dir', '-r', type=str)
+<<<<<<< HEAD
+    parser.add_argument('--imgs_dir', '-i', type=str)
+=======
     parser.add_argument('--img_dir', '-i', type=str)
+>>>>>>> 2fdc29c91868b8b3971aba52019998f66d38ec6b
     args = parser.parse_args()
     main(args)
