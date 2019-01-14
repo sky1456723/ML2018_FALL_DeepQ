@@ -57,7 +57,6 @@ class AutoEncoder(torch.nn.Module):
         code = self.G_label_to_img(code)
         return code
 
-
 class Combined_Model(torch.nn.Module):
     def __init__(self, supervised, unsupervised):
         super(Combined_Model, self).__init__()
@@ -78,13 +77,12 @@ class Combined_Model(torch.nn.Module):
         s_out = self.classifier(s_out)
         s_out = F.sigmoid(s_out)
         return s_out
-
 ### DEVICE ###
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-root_dir = os.path.join("../","data","ntu_final_data")
+root_dir = os.path.join(args.root_dir)
 
-train_file = pd.read_csv(os.path.join(root_dir,"medical_images","train.csv"))
+train_file = pd.read_csv(os.path.join(args.root_dir,"train.csv"))
 label_data = []
 unlabel_data = []
 for i in train_file.index:
@@ -99,7 +97,7 @@ for i in train_file.index:
         label_data.append(p)
         
 
-img_dirs = os.path.join(root_dir,"medical_images","images")
+img_dirs = os.path.join(args.img_dirs)
 
 #Use /255 as normalize
 #normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -232,6 +230,7 @@ if __name__ == '__main__':
     parser.add_argument('--batch_size', '-b', type=int, default=4)
     parser.add_argument('--supervised_model_name', '-s', type=str)
     parser.add_argument('--unsupervised_model_name', '-u', type=str)
-
+    parser.add_argument('--root_dir', '-r', type=str)
+    parser.add_argument('--img_dirs', '-i', type=str)
     args = parser.parse_args()
     main(args)
