@@ -124,7 +124,7 @@ def main(args):
             
         
 
-    img_dirs = os.path.join(root_dir,"images")
+    img_dirs = os.path.join(args.imgs_dir)
     
     
     
@@ -183,6 +183,7 @@ if __name__ == '__main__':
     parser.add_argument('--epoch_number', '-e', type=int, default=20)
     parser.add_argument('--batch_size', '-b', type=int, default=4)
     parser.add_argument('--root', type=str)
+    parser.add_argument('--imgs_dir', type=str)
     mutex = parser.add_mutually_exclusive_group(required = True)
     mutex.add_argument('--load_model', '-l', action='store_true', help='load a pre-existing model')
     mutex.add_argument('--new_model', '-n', action='store_true', help='create a new model')
