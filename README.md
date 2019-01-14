@@ -1,9 +1,9 @@
 # ML2018_FALL_DeepQ
 Machine Learning (2018, Fall) repo for DeepQ competition
 ## 套件版本
-Pytorch 0.4.1  
-numpy 1.15.4  
-pandas 0.23.4
+* Pytorch 0.4.1  
+* numpy 1.15.4  
+* pandas 0.23.4
 ## Training
 執行finalscript.sh以開始訓練。執行方法如下:
 ```bash finalscript.sh [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```
