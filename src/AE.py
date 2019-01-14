@@ -112,7 +112,7 @@ def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4, im
 
 def main(args):
     ### Data ###
-    root_dir = os.path.join(args.root)
+    root_dir = os.path.join(args.root_dir)
 
     train_file = pd.read_csv(os.path.join(root_dir,"train.csv"))
     label_data = []
@@ -182,7 +182,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str, default='default')
     parser.add_argument('--epoch_number', '-e', type=int, default=20)
     parser.add_argument('--batch_size', '-b', type=int, default=4)
-    parser.add_argument('--root', type=str)
+    parser.add_argument('--root_dir', type=str)
     parser.add_argument('--imgs_dir', type=str)
     mutex = parser.add_mutually_exclusive_group(required = True)
     mutex.add_argument('--load_model', '-l', action='store_true', help='load a pre-existing model')
