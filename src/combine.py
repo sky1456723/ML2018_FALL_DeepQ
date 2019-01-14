@@ -253,6 +253,6 @@ if __name__ == '__main__':
     parser.add_argument('--supervised_model_name', '-s', type=str)
     parser.add_argument('--unsupervised_model_name', '-u', type=str)
     parser.add_argument('--root_dir', '-r', type=str)
-    parser.add_argument('--img_dirs', '-i', type=str)
+    parser.add_argument('--img_dir', '-i', type=str)
     args = parser.parse_args()
     main(args)
