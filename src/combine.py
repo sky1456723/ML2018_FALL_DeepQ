@@ -13,6 +13,7 @@ import torchvision
 import torchvision.transforms as transforms
 import gc
 import argparse
+import random
 
 class AutoEncoder(torch.nn.Module):
     def __init__(self,c_dim):
