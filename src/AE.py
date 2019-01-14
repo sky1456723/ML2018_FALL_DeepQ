@@ -66,7 +66,7 @@ def criterion(true,pred):
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
 ### Data ###
-root_dir = os.path.join("../","data","ntu_final_data")
+root_dir = os.path.join(args.root)
 
 train_file = pd.read_csv(os.path.join(root_dir,"medical_images","train.csv"))
 label_data = []
@@ -178,6 +178,7 @@ if __name__ == '__main__':
     parser.add_argument('--model_name', type=str, default='default')
     parser.add_argument('--epoch_number', '-e', type=int, default=20)
     parser.add_argument('--batch_size', '-b', type=int, default=4)
+    parser.add_argument('--root', type=str)
     mutex = parser.add_mutually_exclusive_group(required = True)
     mutex.add_argument('--load_model', '-l', action='store_true', help='load a pre-existing model')
     mutex.add_argument('--new_model', '-n', action='store_true', help='create a new model')
