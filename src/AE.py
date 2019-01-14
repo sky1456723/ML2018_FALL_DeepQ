@@ -68,7 +68,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 ### Data ###
 root_dir = os.path.join(args.root)
 
-train_file = pd.read_csv(os.path.join(root_dir,"medical_images","train.csv"))
+train_file = pd.read_csv(os.path.join(root_dir,"train.csv"))
 label_data = []
 unlabel_data = []
 for i in train_file.index:
@@ -78,7 +78,7 @@ for i in train_file.index:
             
         
 
-img_dirs = os.path.join(root_dir,"medical_images","images")
+img_dirs = os.path.join(root_dir,"images")
 
 
 ### Transform ###
