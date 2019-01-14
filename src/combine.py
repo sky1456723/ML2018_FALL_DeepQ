@@ -17,7 +17,7 @@ import argparse
 class AutoEncoder(torch.nn.Module):
     def __init__(self,c_dim):
         super(AutoEncoder, self).__init__()
-        self.G_img_to_label = torch.nn.Sequential(torch.nn.Conv2d(3,128,kernel_size=(6,6),stride=(1,1)), #218x218
+        self.G_img_to_label = torch.nn.Sequential(torch.nn.Conv2d(3,128,kernel_size=(7,7),stride=(1,1)), #218x218
                                                   torch.nn.BatchNorm2d(128),
                                                   torch.nn.LeakyReLU(),
                                                   torch.nn.AvgPool2d((2,2)), #109x109
