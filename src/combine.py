@@ -158,10 +158,15 @@ def main(args):
 
     epoch = args.epoch_number
     model_name = args.model_name
-
+    """
     train_data = label_data[len(label_data)//10:]
     val_data = label_data[:len(label_data)//10]
-
+    """
+    c = [x for x in range(len(label_data))]
+    numb=len(label_data)//10
+    selected=random.sample(c,numb)
+    val_data =[label_data[i] for i in selected]
+    train_data=[label_data[m] for m in c if m not in selected]
     best_auroc = 0 
     for e in range(epoch):
         print("Epoch ",e)
