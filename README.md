@@ -6,7 +6,7 @@ Pytorch 0.4.1
 numpy 1.15.4  
 pandas 0.23.4  
 ****
-### Train
+### 訓練
 #### Auto-Encoder
 執行AE.py以訓練Auto-Encoder模型用於unsupervised learning的部分  
 執行方法如下:  
@@ -16,7 +16,7 @@ Auto-Encoder的訓練程度可以由自己決定，在這次的比賽中，我�
 
 #### Ensemble
 
-### Test
+## Testing
 執行test_combine_model.py：  
 ```python test_combine_model.py [model名字] [輸出檔案（請在final/src底下)] [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
 預設情況下會是 model_編號 對應到 model_編號.csv 為其結果，也請以此方式命名以免ensemble時找不到檔案，    
