@@ -149,7 +149,7 @@ def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4):
 
 def main(args):
     ### Define Model ###
-    supervised_model = torchvision.models.densenet121(pretrained = True)
+    supervised_model = torchvision.models.densenet201(pretrained = True)
     unsupervised_model = torch.load(args.unsupervised_model_name)
     model = Combined_Model(supervised_model, unsupervised_model).to(device)
     model = model.train()
