@@ -65,21 +65,6 @@ def criterion(true,pred):
 ### DEVICE ###
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 
-### Data ###
-root_dir = os.path.join(args.root)
-
-train_file = pd.read_csv(os.path.join(root_dir,"train.csv"))
-label_data = []
-unlabel_data = []
-for i in train_file.index:
-    if type(train_file.loc[i]["Labels"]) != str:
-        if math.isnan(train_file.loc[i]["Labels"]):
-            unlabel_data.append( [ train_file.loc[i]["Image Index"] ])
-            
-        
-
-img_dirs = os.path.join(root_dir,"images")
-
 
 ### Transform ###
 #normalize = transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
@@ -126,6 +111,24 @@ def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4):
     return label_dataloader
 
 def main(args):
+    ### Data ###
+    root_dir = os.path.join(args.root)
+
+    train_file = pd.read_csv(os.path.join(root_dir,"train.csv"))
+    label_data = []
+    unlabel_data = []
+    for i in train_file.index:
+        if type(train_file.loc[i]["Labels"]) != str:
+            if math.isnan(train_file.loc[i]["Labels"]):
+                unlabel_data.append( [ train_file.loc[i]["Image Index"] ])
+            
+        
+
+    img_dirs = os.path.join(root_dir,"images")
+    
+    
+    
+    
     ### Define Model ###
     if args.new_model:
         #### Add model ###
