@@ -5,8 +5,8 @@ Machine Learning (2018, Fall) repo for DeepQ competition
 * numpy 1.15.4  
 * pandas 0.23.4
 ## Training
-執行finalscript.sh以開始訓練。執行方法如下:
-```bash finalscript.sh [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```
+執行finalscript.sh以開始訓練。執行方法如下:  
+```bash finalscript.sh [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
 如果執行失敗或者想要更細部的操作，請參閱下個條目。
 ## Training(在bash失敗或想要細部調整的情況下)
 ### Auto-Encoder
@@ -23,7 +23,7 @@ Auto-Encoder的訓練程度可以由自己決定。
 ****
 ### Ensemble  
 執行ensemble.py以進行bagging方法的實踐。執行方法如下:  
-```python3 ensemble.py```
+```python3 ensemble.py```  
 本次比賽中，我們使用12個model的ensemble，少量增加Model數量可以增加一點AUROC數值。
 
 ## Testing
