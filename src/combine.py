@@ -174,7 +174,7 @@ def main(args):
             label_data.append(p)
 
 
-    img_dirs = os.path.join(args.img_dirs)
+    img_dirs = os.path.join(args.imgs_dir)
     """
     train_data = label_data[len(label_data)//10:]
     val_data = label_data[:len(label_data)//10]
