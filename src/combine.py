@@ -219,7 +219,7 @@ def main(args):
         model = model.eval()
         val_loss = 0
         val_acc = 0
-        val_dataloader = get_dataloader(val_data, batch_size = args.batch_size, img_dirs = args.img_dirs)
+        val_dataloader = get_dataloader(val_data, batch_size = args.batch_size, img_dirs = args.imgs_dir)
         ans_list = []
         label_list = []
         for b_num, (data, label) in enumerate(val_dataloader):
