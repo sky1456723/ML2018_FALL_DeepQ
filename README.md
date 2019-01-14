@@ -25,7 +25,7 @@ Auto-Encoder的訓練程度可以由自己決定。
 執行ensemble.py以進行bagging方法的實踐。執行方法如下:
 ```python3 ensemble.py```
 本次比賽中，我們使用12個model的ensemble，少量增加Model數量可以增加一點AUROC數值。
-****
+
 ## Testing
 執行test_combine_model.py：  
 ```python test_combine_model.py [model名字] [輸出檔案（請在final/src底下)] [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
