@@ -1,4 +1,4 @@
-python3 AE.py --root_dir=$1 --img_dirs=$2  --model_name=AutoEncoder s
+python3 AE.py --root_dir=$1 --img_dirs=$2  --model_name=AutoEncoder 
 for i in {1..12}
 do
 	python3 combine.py -u=AutoEncoder --model_name=model_$i -r=$1 -i=$2
