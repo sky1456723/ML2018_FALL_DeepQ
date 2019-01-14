@@ -7,7 +7,7 @@ Machine Learning (2018, Fall) repo for DeepQ competition
 ## Training
 執行finalscript.sh以開始訓練。執行方法如下:  
 ```bash finalscript.sh [放train.csv, test.csv跟classname.csv的資料夾] [train圖片的資料夾] [test圖片的資料夾]```  
-如果執行失敗或者想要更細部的操作，請參閱下個條目。
+如果執行失敗(可能因切validation data時的random性質使sklearn無法計算AUROC而使其中幾個model失敗)或者想要更細部的操作，請參閱下個條目。
 ## Training(在shell script失敗或想要細部調整的情況下)
 ### Auto-Encoder
 執行AE.py以訓練Auto-Encoder模型用於unsupervised learning的部分。執行方法如下:  
