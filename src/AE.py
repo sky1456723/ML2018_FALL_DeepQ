@@ -76,7 +76,7 @@ transformList.append(transforms.ToTensor())
 transformSequence=transforms.Compose(transformList)
 
 
-def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4):
+def get_dataloader(data_list, transform=None, normalize=None, batch_size = 4, img_dirs = None):
     part_data = []
     part_label = []
     print(len(data_list))
@@ -158,7 +158,8 @@ def main(args):
             label_dataloader = get_dataloader(train_data[part*len(train_data)//20:(part+1)*len(train_data)//20],
                                              transform = transformSequence,
                                              normalize = None,
-                                             batch_size = args.batch_size)
+                                             batch_size = args.batch_size,
+                                             img_dirs = img_dirs)
             for b_num, data in enumerate(label_dataloader):
                 data = data[0].to(device)
                 optimizer.zero_grad()
