@@ -8,7 +8,7 @@ Machine Learning (2018, Fall) repo for DeepQ competition
 執行finalscript.sh以開始訓練。執行方法如下:  
 ```bash finalscript.sh [放train.csv跟classname.csv的資料夾] [train圖片的資料夾] [test圖片的資料夾]```  
 如果執行失敗或者想要更細部的操作，請參閱下個條目。
-## Training(在bash失敗或想要細部調整的情況下)
+## Training(在shell script失敗或想要細部調整的情況下)
 ### Auto-Encoder
 執行AE.py以訓練Auto-Encoder模型用於unsupervised learning的部分。執行方法如下:  
 ```python3 --model_name [model名字(預設為default)] -e [epoch數量(預設為20)] -b [batch大小(預設為4)] --root [放train.csv跟classname.csv的資料夾] -n(新增模型，或者用-l來載入過去訓練到一半的模型)```   
