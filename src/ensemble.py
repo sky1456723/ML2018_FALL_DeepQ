@@ -23,7 +23,7 @@ result9 = pd.read_csv("./model_9.csv")
 result10 = pd.read_csv("./model_10.csv")
 result11 = pd.read_csv("./model_11.csv")
 result12 = pd.read_csv("./model_12.csv")
-
+result13 = pd.read_csv("./model_13.csv")
 
 # In[5]:
 
@@ -32,7 +32,7 @@ result_F = []
 result_F.append(result1['id'])
 for i in result1.columns:
     if i!='id':
-        result_F.append((result1[i]+result2[i]+result3[i]+result4[i]+result5[i]+result6[i]+result7[i]+                        result8[i]+result9[i]+result10[i]+result11[i]+result12[i])/12)
+        result_F.append((result1[i]+result2[i]+result3[i]+result4[i]+result5[i]+result6[i]+result7[i]+result8[i]+result9[i]+result10[i]+result11[i]+result12[i]+result13[i])/13)
 
 
 # In[6]:
