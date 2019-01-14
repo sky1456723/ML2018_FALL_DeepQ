@@ -28,6 +28,6 @@ Auto-Encoder的訓練程度可以由自己決定。
 
 ## Testing
 執行test_combine_model.py：  
-```python test_combine_model.py [model名字] [輸出檔案（請在final/src底下)] [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
+```python3 test_combine_model.py [model名字] [輸出檔案（請在final/src底下)] [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
 預設情況下會是 model_編號 對應到 model_編號.csv 為其結果，也請以此方式命名以免ensemble時找不到檔案，    
 當12個csv都有的時候ensemble.py才不會出錯。 
