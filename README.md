@@ -20,6 +20,7 @@ Auto-Encoder的訓練程度可以由自己決定。
 ```python3 combine.py --model_name [請以model_(1到12)依序命名] -e [epoch數量(預設為20)] -b [batch大小(預設為8，可以依照硬體強度調大)] -u [訓練好的Auto-Encoder之model名字] -r [放train.csv跟classname.csv的資料夾] -i [圖片的資料夾]```  
 例如python3 combine.py --model_name model_1 -e 20 -b 8 -u default -r ntu_final_data -i ntu_final_data/medical_images  
 請執行至少13次(訓練13個model)以達成ensemble的目標大小，或者手動進入ensemble修改model數量上限。  
+(ImageNet pretrained model將由pytorch api下載)
 ****
 ### Ensemble  
 執行ensemble.py以進行bagging方法的實踐。執行方法如下:  
