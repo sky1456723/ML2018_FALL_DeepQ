@@ -19,16 +19,16 @@ Auto-Encoder的訓練程度可以由自己決定。
 執行combine.py以訓練supervised learning與Auto-Encoder的共同訓練。執行方法如下:  
 ```python3 combine.py --model_name [請以model_(1到12)依序命名] -e [epoch數量(預設為20)] -b [batch大小(預設為8，可以依照硬體強度調大)] -u [訓練好的Auto-Encoder之model名字] -r [放train.csv跟classname.csv的資料夾] -i [圖片的資料夾]```  
 例如python3 combine.py --model_name model_1 -e 20 -b 8 -u default -r ntu_final_data -i ntu_final_data/medical_images  
-請執行12次以達成ensemble的目標大小，或者手動進入ensemble修改model數量上限。  
+請執行至少13次(訓練13個model)以達成ensemble的目標大小，或者手動進入ensemble修改model數量上限。  
 ****
 ### Ensemble  
 執行ensemble.py以進行bagging方法的實踐。執行方法如下:  
 ```python3 ensemble.py```  
-本次比賽中，我們使用12個model的ensemble，少量增加Model數量可以增加一點AUROC數值。
+本次比賽中，我們使用13個model的ensemble，少量增加Model數量可以增加一點AUROC數值。
 
 ## Testing
 執行test_combine_model.py：    
 ```python3 test_combine_model.py [model名字] [輸出檔案（請在final/src底下)] [放train.csv跟classname.csv的資料夾] [圖片的資料夾]```  
 預設情況下會是 model_編號 對應到 model_編號.csv 為其結果，也請以此方式命名以免ensemble時找不到檔案，    
-當12個csv都有的時候ensemble.py才不會出錯。 
+當13個csv都有的時候ensemble.py才不會出錯。  
 最後ensemble的結果為result.csv
