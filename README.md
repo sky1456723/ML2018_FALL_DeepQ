@@ -11,7 +11,7 @@ Machine Learning (2018, Fall) repo for DeepQ competition
 ## Training(在shell script失敗或想要細部調整的情況下)
 ### Auto-Encoder
 執行AE.py以訓練Auto-Encoder模型用於unsupervised learning的部分。執行方法如下:  
-```python3 --model_name [model名字(預設為default)] -e [epoch數量(預設為20)] -b [batch大小(預設為4)] --root [放train.csv跟classname.csv的資料夾] -n(新增模型，或者用-l來載入過去訓練到一半的模型)```   
+```python3 AE.py --model_name [model名字(預設為default)] -e [epoch數量(預設為20)] -b [batch大小(預設為4)] --root [放train.csv跟classname.csv的資料夾] -n(新增模型，或者用-l來載入過去訓練到一半的模型)```   
 Auto-Encoder的訓練程度可以由自己決定。  
 在這次的比賽中，我們使用的是訓練到mse_loss=0.16的Auto-Encoder。  
 ****
